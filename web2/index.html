@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+ <head> 
+ <meta charset="UTF-8" /> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Escuta de Eventos</title>
+ <link href="estilo.css" rel="stylesheet" />
+ </head> 
+ <body> 
+ <h1>Lista de Compras</h1> 
+ <div class="div1"> 
+ <input id="input" /> 
+ <button id="add">Adicionar</button> 
+ </div> 
+
+
+ <ul id="lista"></ul> 
+
+ <script> 
+
+
+const input = document.querySelector("input#input"); 
+const button = document.querySelector("button"); 
+const lista = document.querySelector("#lista"); 
+
+button.addEventListener("click", (event) => { 
+ if (input.value.length <= 2) { 
+ 
+    window.alert("O item deve ter, pelo menos, 3 letras.");  }
+     else { 
+
+ const novoItem = document.createElement("li"); 
+
+ const checkboxItem = document.createElement("input"); 
+
+ const textItem = document.createElement("span");
+
+ const removeButtonItem = document.createElement("button"); 
+ 
+ textItem.textContent = input.value; 
+
+ checkboxItem.setAttribute("type", "checkbox"); 
+
+ removeButtonItem.textContent = "Remover"; 
+ 
+ novoItem.insertAdjacentElement("beforeend", checkboxItem);  
+ novoItem.insertAdjacentElement("beforeend", textItem); 
+ novoItem.insertAdjacentElement("beforeend", removeButtonItem); 
+
+ lista.appendChild(novoItem); 
+ 
+ removeButtonItem.addEventListener("click", removerItem); 
+
+ } 
+}); 
+
+function removerItem(event) { 
+ lista.removeChild(event.target.parentElement); 
+}
+
+
+ </script>
+ </body> 
+</html> 

@@ -1,0 +1,25 @@
+button {
+
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: rgb(158, 67, 6);
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+h1{
+    color: rgb(158, 67, 6);
+    font-size: 28px;
+    text-align: center ;
+  }
+
+  .div1{
+
+    justify-content: center;
+    margin: auto;
+
+  }
