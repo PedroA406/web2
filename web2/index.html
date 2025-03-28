@@ -6,7 +6,10 @@
  <link href="estilo.css" rel="stylesheet" />
  </head> 
  <body> 
- <h1>Lista de Compras</h1> 
+
+<fieldset>
+<legend><h1>Lista de Compras</h1> </legend>
+ 
  <div class="div1"> 
  <input id="input" /> 
  <button id="add">Adicionar</button> 
@@ -40,6 +43,18 @@ button.addEventListener("click", (event) => {
 
  checkboxItem.setAttribute("type", "checkbox"); 
 
+ checkboxItem.addEventListener("click", (event) => { 
+    if (event.target.checked) { 
+ textItem.setAttribute("class", "checked"); 
+ checkboxItem.setAttribute("class", "checked"); 
+ } else { 
+ textItem.removeAttribute("class"); 
+ checkboxItem.removeAttribute("class"); 
+
+ } 
+}); 
+
+
  removeButtonItem.textContent = "Remover"; 
  
  novoItem.insertAdjacentElement("beforeend", checkboxItem);  
@@ -58,6 +73,10 @@ function removerItem(event) {
 }
 
 
+
+
  </script>
+
+</fieldset>
  </body> 
 </html> 
